@@ -4,7 +4,6 @@ export PY_DIR="python"
 export PKG_DIR="packages"
 
 cd "${DIR}/.."
-echo ${PWD}
 
 rm -rf ${PY_DIR}
 

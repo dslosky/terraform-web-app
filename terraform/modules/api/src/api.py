@@ -1,4 +1,11 @@
-import sqlalchemy
+from fastapi import FastAPI
+from mangum import Mangum
 
-def handler(event, context):
-    return "Hello hello my friends!"
+app = FastAPI()
+
+
+@app.get("/")
+async def root():
+    return {"message": "Hellooooo everybody!"}
+
+handler = Mangum(app)
