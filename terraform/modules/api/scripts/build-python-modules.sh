@@ -14,7 +14,7 @@ source venv/bin/activate
 pip3 install -r requirements.txt -t ${PY_DIR}
 
 echo $PWD
-zip -r packages/python.zip python
+zip -r packages/python-modules.zip python
 
 rm -rf scripts/venv
 rm -rf ${PY_DIR}
