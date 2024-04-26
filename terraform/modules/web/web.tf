@@ -47,6 +47,7 @@ resource "aws_s3_object" "web_app" {
   for_each = fileset("${path.module}/web/dist/web", "*")
   bucket = aws_s3_bucket.www_domain.id
   key = each.value
+  content_type = lookup(var.content_types, reverse(split(".", each.value))[0])
   source = "${path.module}/web/dist/web/${each.value}"
   etag = filemd5("${path.module}/web/dist/web/${each.value}")
 }
